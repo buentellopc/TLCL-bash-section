@@ -1,17 +1,13 @@
 #!/bin/bash
 # Program to output a system information page
 
-
+title="System Information Report"
 
 echo "<html>
-  <head>
- <title>Page Title</title>
+ <head>
+ <title>$title</title>
   </head>
   <body>
- Page body.
+    <h1>$title</h1>
   </body>
  </html>"
-
-
-
-
