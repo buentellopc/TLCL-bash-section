@@ -1,6 +1,7 @@
 #!/bin/bash
 # read-integer: evaluate the value of an integer.
 
+# -n to not add a newline
 echo -n "Please enter an integer -> "
 read int
 
