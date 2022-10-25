@@ -34,3 +34,14 @@ if [[ "$REPLY" -eq 2 ]]; then
   echo "$(df -h)"
   exit
 fi
+
+# home space
+if [[ "$REPLY" -eq 3 ]]; then
+  if [[ "$(id -u)" -eq 1 ]]; then
+    echo "Home Space Utilization (All Users)"
+    du -sh /home
+  else
+    echo "Home Space Utilization ($USER)"
+    du -sh $HOME
+  fi
+fi
