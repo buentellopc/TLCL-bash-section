@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# read-menu: display system information
+
+# Display the menu and the options to select
+cat <<-_EOF_
+Please Select:
+1. Display System Information
+2. Display Disk Space
+3. Display Home Space Utilization
+0. Quit
+
+_EOF_
