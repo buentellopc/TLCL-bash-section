@@ -15,17 +15,22 @@ _EOF_
 # Read the input from the user and let reply to hold the answer
 read -p "Enter selection [0-3] > "
 
+# quit
 if [[ "$REPLY" -eq 0 ]]; then
   echo "Program terminated."
   exit
 fi
 
+# system information
 if [[ "$REPLY" -eq 1 ]]; then
   cat <<-_EOF_
   Hostname: $HOSTNAME
   $(uptime)
 _EOF_
+fi
 
-  echo "Hostname: "$HOSTNAME""
-
+# disk space
+if [[ "$REPLY" -eq 2 ]]; then
+  echo "$(df -h)"
+  exit
 fi
