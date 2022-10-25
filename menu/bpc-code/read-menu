@@ -14,3 +14,18 @@ _EOF_
 
 # Read the input from the user and let reply to hold the answer
 read -p "Enter selection [0-3] > "
+
+if [[ "$REPLY" -eq 0 ]]; then
+  echo "Program terminated."
+  exit
+fi
+
+if [[ "$REPLY" -eq 1 ]]; then
+  cat <<-_EOF_
+  Hostname: $HOSTNAME
+  $(uptime)
+_EOF_
+
+  echo "Hostname: "$HOSTNAME""
+
+fi
