@@ -11,3 +11,6 @@ Please Select:
 0. Quit
 
 _EOF_
+
+# Read the input from the user and let reply to hold the answer
+read -p "Enter selection [0-3] > "
