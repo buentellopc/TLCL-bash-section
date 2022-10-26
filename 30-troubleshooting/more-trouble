@@ -1,0 +1,25 @@
+dir_name=/home/buentellopc/Development/Learn/TLCL/Books/TLCL/30-troubleshooting/fooDir
+
+[[ -d "$dir_name" ]] && cd "$dir_name" && echo "removing all this files:" && ls
+
+# Delete files in directory $dir_name
+
+# error when there is not a directory found
+if [[ ! -d "$dir_name" ]]; then
+  echo "No such directory: '$dir_name'" >&2
+  exit 1
+fi
+
+# error when permissions are insufficient, read and execute for the directory
+if ! cd "$dir_name"; then
+  echo "Cannot cd to '$dir_name'" >&2
+  exit 1
+fi
+
+# at this point, we are the correct directory the only thing that could go wrong is:
+
+# error when permissions  are insufficient, write for the file
+if ! rm *; then
+  echo "File deletion failed. Check results" >&2
+  exit 1
+fi
